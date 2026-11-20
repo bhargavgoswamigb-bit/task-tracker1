@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Issue Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <div class="heading">
+                <span class="icon">✓</span>
+                <h1>Task & Issue Tracker</h1>
+            </div>
+            <p>Organize, prioritize, and track daily engineering tasks.</p>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-text" id="progressText">
+                ● 0 of 5 tasks completed
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add Task -->
+    <form id="taskForm" class="add-task">
+        <input
+            type="text"
+            id="taskTitle"
+            placeholder="Task title (e.g., Fix CORS headers on Express API)..."
+            required
+        >
+
+        <select id="taskPriority">
+            <option value="High">High Priority</option>
+            <option value="Medium" selected>Medium Priority</option>
+            <option value="Low">Low Priority</option>
+        </select>
+
+        <button type="submit" class="add-btn">
+            ＋ Add Task
+        </button>
+    </form>
+
+    <!-- Filters and Search -->
+    <div class="toolbar">
+
+        <div class="tabs">
+            <button class="tab active" data-filter="all">
+                All <span id="allCount">5</span>
+            </button>
+
+            <button class="tab" data-filter="pending">
+                Pending <span id="pendingCount">5</span>
+            </button>
+
+            <button class="tab" data-filter="completed">
+                Completed <span id="completedCount">0</span>
+            </button>
+        </div>
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="⌕ Search tasks..."
+        >
+
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list" id="taskList"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
